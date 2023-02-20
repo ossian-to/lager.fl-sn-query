@@ -1,0 +1,582 @@
+@charset "UTF-8";
+@import "initial";
+
+
+*{
+  box-sizing: border-box;
+  transition: padding 0.3s, top 0.3s, width 0.3s, max-width 0.3s, border-radius 0.3s;
+}
+
+.ossian{
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 1920px;
+  width: 100%;
+  background-color: #c9f3ff;
+  background-image: url(../images/sky-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  // box-shadow: 0 0 300px rgba(24, 69, 134, 0.8) inset;
+}
+
+// 遊戲 LOGO
+
+.game-logo{
+  max-width: 380px;
+  z-index: 5;
+  img{
+    width: 100%;
+  }
+}
+
+.fore-back{
+  position: relative;
+  min-height: 550px;
+}
+
+// 遠景的山及城堡
+
+.mountains-castles{
+  position: absolute;
+  left: calc(50% - 970px);
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/back-end.png);
+  background-repeat: no-repeat;
+  // background-position: bottom left;
+  // transform: scale(1.15);
+  // filter: blur(10px);
+}
+
+// 前景的房子及道路
+
+.fore-ground{
+  position: absolute;
+  bottom: -5px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/fore-ground.png);
+  background-repeat: no-repeat;
+  // background-position: bottom center;
+  transform: scale(1.05);
+  // filter: blur(6px);
+}
+
+// 前景模糊的樹叢
+
+.grove{
+  position: absolute;
+  bottom: -2em;
+  width: 100%;
+  height: 348px;
+  background-image: url(../images/grove.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  filter: blur(10px);
+  // transform: scale(1.1);
+}
+
+// 人類女性
+
+.human-girl{
+  position: absolute;
+  left: calc(50% - 730px);
+  bottom: -250px;
+  width: 388px;
+  height: 726px;
+  background-image: url(../images/human-woman.png);
+  background-position: buttom center;
+  background-repeat: no-repeat;
+  transform: rotate(-5deg);
+}
+
+// 豬豬
+
+.pig{
+  position: absolute;
+  bottom: -4em;
+  left: calc(50% - 480px);
+  width: 143px;
+  height: 199px;
+  background-image: url(../images/pig.png);
+  background-position: buttom center;
+  background-repeat: no-repeat;
+  // transform: scale(1.15);
+  filter:drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.65));
+  // filter: blur(6px);
+  // z-index: 1;
+  &::before{
+    content: "";
+    position: absolute;
+    bottom: -1em;
+    left: 25em;
+    width: 143px;
+    height: 199px;
+    background-image: url(../images/pig.png);
+    background-position: buttom center;
+    background-repeat: no-repeat;
+    transform: scale(0.9) rotate(70deg);
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    bottom: 20em;
+    left: -16em;
+    width: 143px;
+    height: 199px;
+    background-image: url(../images/pig.png);
+    background-position: buttom center;
+    background-repeat: no-repeat;
+    transform: scale(0.8) rotate(-30deg);
+  }
+}
+// 雪怪
+
+.snow-monster{
+  position: absolute;
+  bottom: -15em;
+  left: calc(50% + 140px);
+  width: 832px;
+  height: 865px;
+  background-image: url(../images/snow-monster.png);
+  background-position: buttom center;
+  background-repeat: no-repeat;
+  transform: scale(0.925);
+}
+
+// 兔子
+.rabbit,
+.rabbit::before,
+.rabbit::after{
+  content: "";
+  position: absolute;
+  width: 174px;
+  height: 123px;
+  background-image: url(../images/rabbit.png);
+  background-position: buttom center;
+  background-repeat: no-repeat;
+}
+
+.rabbit{
+  // left: calc(50% + 350px);
+  // top: 1.5em;
+  transform: scale(1) rotate(0deg);
+  // z-index: 1;
+  &::before{
+    left: calc(50% - 660px);
+    top: 2em;
+    transform: scale(0.65) rotate(30deg);
+  }
+  &::after{
+    left: calc(50% + 35px);
+    top: 6em;
+    transform: scale(0.9) rotate(-35deg);
+  }
+}
+
+// 下載 icon 及連結
+
+.download-zone{
+  position: relative;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  .glass{
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    // padding: 2em;
+    max-width: 680px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(0.75em);
+    border-radius: 1.5em;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.95) inset;
+  }
+}
+.glass-grid{
+  display: grid;
+  // grid-template-columns: 3fr 2fr;
+  gap: 1em;
+}
+
+ul{
+  &.download-links{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+    li{
+      padding-bottom: 1em;
+      &:nth-child(1){
+        a{
+          &::before{
+            animation-delay: 0.35s;
+          }
+        }
+      }
+      &:nth-child(2){
+        a{
+          &::before{
+            animation-delay: 0.7s;
+          }
+        }
+      }
+      &:nth-child(3){
+        a{
+          &::before{
+            animation-delay: 0.9s;
+          }
+        }
+      }
+      a{
+        display: block;
+        overflow: hidden;
+        position: relative;
+        text-decoration: none;
+        border-radius: 0.5em;
+        transition: transform 0.3s;
+        &:hover{
+          transform: scale(0.95);
+        }
+        &::before{
+          content: '';
+          position: absolute;
+          top: -300px;
+          left: -500px;
+          width: 200px;
+          height: 1000px;
+          transform: rotate(45deg);
+          background: -moz-linear-gradient(left, rgba(255,255,255,0.4) 30%, rgba(255,255,255,0) 90%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(left, rgba(255,255,255,0.4) 30%,rgba(255,255,255,0) 90%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to right,rgba(255,255,255,0.4) 30%,rgba(255,255,255,0) 90%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+          animation: move 4.5s infinite;
+        }
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@keyframes move {
+  0%{
+    left: -500px;
+  }
+  100%{
+    left: 1500px;
+  }
+}
+
+audio{
+  margin-top: 2em;
+  width: 100%;
+}
+
+// 雲的效果
+
+@keyframes clouds-loop-1 {
+  to {
+    background-position: 3158px 0;
+  }
+}
+.clouds-1 {
+  background-image: url("../images/cloud-3.png");
+  animation: clouds-loop-1 120s infinite linear;
+}
+
+@keyframes clouds-loop-2 {
+  to {
+    background-position: 2000px 0;
+  }
+}
+.clouds-2 {
+  background-image: url("../images/cloud-2.png");
+  animation: clouds-loop-2 50s infinite linear;
+}
+
+@keyframes clouds-loop-3 {
+  to {
+    background-position: 3158px 0;
+  }
+}
+.clouds-3 {
+  background-image: url("../images/cloud-3.png");
+  animation: clouds-loop-3 40s infinite linear;
+}
+
+
+.clouds {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+  opacity: 1;
+  pointer-events: none;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  // backdrop-filter: blur(0.085em);
+  // mix-blend-mode: hard-light;
+  transform: scale(1.5,1);
+  // filter: blur(0.1em);
+}
+
+.clouds-1,
+.clouds-2,
+.clouds-3 {
+  background-repeat: repeat-x;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 500px;
+}
+
+.facebook-rocker{
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  max-width: 700px;
+  width: 100%;
+  li{
+    transform: scale(1);
+    transition: transform 0.3s;
+    &:hover{
+      transform: scale(0.9);
+    }
+    a{
+      display: block;
+      text-decoration: none;
+      img{
+        width: 100%;
+        filter:drop-shadow(0 2px 1px rgba(0, 0, 0, 0.85));
+      }
+    }
+  }
+}
+
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+  padding: 3em 1em;
+  color: #999;
+  font-size: 0.75em;
+  text-align: center;
+  .game-grading,
+  .lager-zone {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 1em;
+    text-align: initial;
+    .lager-logo{
+      a{
+        &:nth-child(1){
+          padding-right: 0.75em;
+        }
+      }
+    }
+  }
+  .game-grading{
+    .game-grading-list{
+      ul{
+        margin: 0;
+        padding-left: 1.25em;;
+      }
+    }
+  }
+}
+
+// RWD
+
+@media only screen and (min-width: 0px){
+  .game-logo{
+    position: static;
+    margin: 0 auto;
+    padding: 2em 3em;
+  }
+  .glass{
+    padding: 1em;
+  }
+  // .glass-grid{
+  //   grid-template-columns: 1fr;
+  //   gap: 1em;
+  // }
+  .glass-grid{
+    grid-template-columns: 1fr;
+    gap: 1em;
+    // .right{
+    //   display: none;
+    // }
+  }
+  .grove{
+    transform: scale(1.05);
+  }
+  .mountains-castles,
+  .fore-ground{
+    background-position: bottom right;
+    filter: blur(20px);
+  }
+  .pig,
+  .rabbit{
+    display: none;
+  }
+  .rabbit{
+    // left: calc(50% + 150px);
+    left: calc(50% + 280px);
+    top: -12em;
+    z-index: 1;
+  }
+  .footer{
+    flex-wrap: wrap;
+    .game-grading{
+      flex-wrap: wrap;
+      width: 1000px;
+      .game-grading-mark{
+        width: 100%;
+        text-align: center;
+        img{
+          width: 80px;
+        }
+      }
+    }
+    .lager-zone{
+      flex-wrap: wrap;
+      width: 100%;
+      justify-content: center;
+      .lager-logo{
+        order: 0;
+      }
+      .footer-text{
+        text-align: center;
+        span{
+          &:nth-child(1){
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 500px){
+  .game-logo{
+    padding: 1em 2em;
+  }
+  .glass{
+    padding: 2em;
+  }
+  .mountains-castles,
+  .fore-ground{
+    background-position: bottom center;
+  }
+  // .grove{
+  //   transform: scale(1);
+  // }
+  .snow-monster,
+  .human-girl{
+    display: none;
+  }
+  .footer{
+    .game-grading{
+      flex-wrap: nowrap;
+      .game-grading-mark{
+        width: unset;
+        text-align: unset;
+        img{
+          width: 50px;
+        }
+      }
+    }
+    .lager-zone{
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-top: 3em;
+      width: 100%;
+      border-top: 1px dotted #666;
+      .lager-logo{
+        order: 1;
+      }
+      .footer-text{
+        text-align: right;
+        span{
+          display: block;
+          &:nth-child(1){
+            display: unset;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 900px){
+  .fore-ground{
+    filter: unset;
+  }
+  .mountains-castles{
+    filter: unset;
+  }
+  .mountains-castles{
+    background-position: bottom left;
+  }
+  .snow-monster,
+  .human-girl{
+    display: unset;
+  }
+  .glass-grid{
+    grid-template-columns: 3fr 2.5fr;
+    .right{
+      display: block;
+    }
+  }
+  .pig,
+  .rabbit{
+    display: unset;
+  }
+}
+@media only screen and (min-width: 1500px){
+  // .game-logo{
+  //   position: absolute;
+  //   top: 70px;
+  //   left: 70px;
+  // }
+  // .download-zone{
+  //   padding-top: 9em;
+  // }
+  // .grove{
+  //   transform: scale(1.1);
+  // }
+  .pig{
+    z-index: unset;
+  }
+  .footer{
+    flex-wrap: nowrap;
+    .game-grading{
+      padding-top: unset;
+      width: unset;
+      border-top: unset;
+    }
+    .lager-zone{
+      padding-top: unset;
+      border-top: unset;
+      width: unset;
+    }
+  }
+}
+
+// @media only screen and (min-width: 1700px){
+//   .pig{
+//     z-index: 1;
+//   }
+// }
+
