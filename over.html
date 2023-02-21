@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="assets/css/all.css">
+  <script src="assets/js/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+
+
+
+
+  <!--Creates the popup body-->
+  <div class="popup-overlay">
+    <!--Creates the popup content-->
+    <div class="popup-content">
+      <h2>Pop-Up</h2>
+      <p> This is an example pop-up that you can make using jQuery.</p>
+      <button class="btn popup-close"></button>
+    </div>
+  </div>
+  <!--Content shown when popup is not displayed-->
+  <button class="popup-open">Open</button>
+
+
+
+
+
+  <script>
+    $(".popup-open, .popup-content").on("click", function () {
+      $(".popup-overlay").addClass("active");
+    });
+    $(".popup-close, .popup-overlay").on("click", function () {
+      $(".popup-overlay").removeClass("active");
+    });
+  </script>
+</body>
+</html>

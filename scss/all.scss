@@ -1,6 +1,12 @@
 @charset "UTF-8";
 @import "initial";
 
+// 載入思源宋體 Medium
+// font-family: 'Noto Serif TC', serif;
+// font-weight: 500;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap');
+
 
 *{
   box-sizing: border-box;
@@ -11,387 +17,368 @@
   position: relative;
   overflow: hidden;
   margin: 0 auto;
+  padding: 2em 1em;
   max-width: 1920px;
   width: 100%;
-  background-color: #c9f3ff;
-  background-image: url(../images/sky-bg.jpg);
+  min-height: 100%;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 500;
+  background-color: #49ab62;
+  background-image: url(../images/bg.jpg);
   background-repeat: no-repeat;
   background-position: top center;
-  // box-shadow: 0 0 300px rgba(24, 69, 134, 0.8) inset;
+  em{
+    font-style: normal;
+  }
 }
 
-// 遊戲 LOGO
+// 童話世界的 LOGO
 
 .game-logo{
-  max-width: 380px;
-  z-index: 5;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
   img{
-    width: 100%;
-  }
-}
-
-.fore-back{
-  position: relative;
-  min-height: 550px;
-}
-
-// 遠景的山及城堡
-
-.mountains-castles{
-  position: absolute;
-  left: calc(50% - 970px);
-  width: 100%;
-  height: 100%;
-  background-image: url(../images/back-end.png);
-  background-repeat: no-repeat;
-  // background-position: bottom left;
-  // transform: scale(1.15);
-  // filter: blur(10px);
-}
-
-// 前景的房子及道路
-
-.fore-ground{
-  position: absolute;
-  bottom: -5px;
-  width: 100%;
-  height: 100%;
-  background-image: url(../images/fore-ground.png);
-  background-repeat: no-repeat;
-  // background-position: bottom center;
-  transform: scale(1.05);
-  // filter: blur(6px);
-}
-
-// 前景模糊的樹叢
-
-.grove{
-  position: absolute;
-  bottom: -2em;
-  width: 100%;
-  height: 348px;
-  background-image: url(../images/grove.png);
-  background-position: bottom right;
-  background-repeat: no-repeat;
-  filter: blur(10px);
-  // transform: scale(1.1);
-}
-
-// 人類女性
-
-.human-girl{
-  position: absolute;
-  left: calc(50% - 730px);
-  bottom: -250px;
-  width: 388px;
-  height: 726px;
-  background-image: url(../images/human-woman.png);
-  background-position: buttom center;
-  background-repeat: no-repeat;
-  transform: rotate(-5deg);
-}
-
-// 豬豬
-
-.pig{
-  position: absolute;
-  bottom: -4em;
-  left: calc(50% - 480px);
-  width: 143px;
-  height: 199px;
-  background-image: url(../images/pig.png);
-  background-position: buttom center;
-  background-repeat: no-repeat;
-  // transform: scale(1.15);
-  filter:drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.65));
-  // filter: blur(6px);
-  // z-index: 1;
-  &::before{
-    content: "";
-    position: absolute;
-    bottom: -1em;
-    left: 25em;
-    width: 143px;
-    height: 199px;
-    background-image: url(../images/pig.png);
-    background-position: buttom center;
-    background-repeat: no-repeat;
-    transform: scale(0.9) rotate(70deg);
-  }
-  &::after{
-    content: "";
-    position: absolute;
-    bottom: 20em;
-    left: -16em;
-    width: 143px;
-    height: 199px;
-    background-image: url(../images/pig.png);
-    background-position: buttom center;
-    background-repeat: no-repeat;
-    transform: scale(0.8) rotate(-30deg);
-  }
-}
-// 雪怪
-
-.snow-monster{
-  position: absolute;
-  bottom: -15em;
-  left: calc(50% + 140px);
-  width: 832px;
-  height: 865px;
-  background-image: url(../images/snow-monster.png);
-  background-position: buttom center;
-  background-repeat: no-repeat;
-  transform: scale(0.925);
-}
-
-// 兔子
-.rabbit,
-.rabbit::before,
-.rabbit::after{
-  content: "";
-  position: absolute;
-  width: 174px;
-  height: 123px;
-  background-image: url(../images/rabbit.png);
-  background-position: buttom center;
-  background-repeat: no-repeat;
-}
-
-.rabbit{
-  // left: calc(50% + 350px);
-  // top: 1.5em;
-  transform: scale(1) rotate(0deg);
-  // z-index: 1;
-  &::before{
-    left: calc(50% - 660px);
-    top: 2em;
-    transform: scale(0.65) rotate(30deg);
-  }
-  &::after{
-    left: calc(50% + 35px);
-    top: 6em;
-    transform: scale(0.9) rotate(-35deg);
-  }
-}
-
-// 下載 icon 及連結
-
-.download-zone{
-  position: relative;
-  padding-left: 1em;
-  padding-right: 1em;
-  width: 100%;
-  .glass{
-    position: relative;
-    overflow: hidden;
     margin: 0 auto;
-    // padding: 2em;
-    max-width: 680px;
+    padding: 1em 0 2em;
+    max-width: 312px;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(0.75em);
-    border-radius: 1.5em;
-    border: 1px solid rgba(255, 255, 255, 0.75);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.95) inset;
   }
 }
-.glass-grid{
-  display: grid;
-  // grid-template-columns: 3fr 2fr;
-  gap: 1em;
-}
 
-ul{
-  &.download-links{
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    list-style: none;
-    li{
-      padding-bottom: 1em;
-      &:nth-child(1){
-        a{
-          &::before{
-            animation-delay: 0.35s;
-          }
-        }
-      }
-      &:nth-child(2){
-        a{
-          &::before{
-            animation-delay: 0.7s;
-          }
-        }
-      }
-      &:nth-child(3){
-        a{
-          &::before{
-            animation-delay: 0.9s;
-          }
-        }
-      }
-      a{
-        display: block;
-        overflow: hidden;
-        position: relative;
-        text-decoration: none;
-        border-radius: 0.5em;
-        transition: transform 0.3s;
-        &:hover{
-          transform: scale(0.95);
-        }
-        &::before{
-          content: '';
-          position: absolute;
-          top: -300px;
-          left: -500px;
-          width: 200px;
-          height: 1000px;
-          transform: rotate(45deg);
-          background: -moz-linear-gradient(left, rgba(255,255,255,0.4) 30%, rgba(255,255,255,0) 90%); /* FF3.6-15 */
-          background: -webkit-linear-gradient(left, rgba(255,255,255,0.4) 30%,rgba(255,255,255,0) 90%); /* Chrome10-25,Safari5.1-6 */
-          background: linear-gradient(to right,rgba(255,255,255,0.4) 30%,rgba(255,255,255,0) 90%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
-          animation: move 4.5s infinite;
-        }
-        img{
-          width: 100%;
-        }
-      }
+// 遊戲內容
+
+.game-content{
+  padding-bottom: 5em;
+}
+.game-description{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1em 1em 1.75em;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: white;
+  border-radius: 0.75em;
+  box-shadow: -1px -1px 1px rgba(102, 60, 45, 0.4) inset;
+  &::before{
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -5px;
+    width: 64px;
+    height: 69px;
+    background-image: url(../images/grass-1.png);
+    background-repeat: no-repeat;
+  }
+  &::after{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: -6px;
+    width: 64px;
+    height: 69px;
+    background-image: url(../images/grass-2.png);
+    background-repeat: no-repeat;
+  }
+}
+.game-title-row{
+  flex: 1;
+  color: #7e38a3;
+  font-size: 1.385em;
+}
+.game-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  em{
+    position: relative;
+    display: block;
+    font-size: 1.3333333em;
+    &::before{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40%;
+      background-color: #ccfbfe;
+      mix-blend-mode: multiply;
     }
   }
 }
-
-@keyframes move {
-  0%{
-    left: -500px;
-  }
-  100%{
-    left: 1500px;
-  }
+.game-end-date-row{
+  padding: 0.65em 0 1em;
+  color: #a35638;
 }
-
-audio{
-  margin-top: 2em;
+.form-position{
+  margin: 0 auto;
+  max-width: 200px;
   width: 100%;
 }
-
-// 雲的效果
-
-@keyframes clouds-loop-1 {
-  to {
-    background-position: 3158px 0;
+.form-zone{
+  position: relative;
+  max-width: 350px;
+  width: 100%;
+  .input-text{
+    padding: 0 0 0.5em;
+    min-height: unset;
+  }
+  input[type="text"],
+  input[type="password"]{
+    margin-bottom: 0.5em;
+    padding: 0.25em 0.5em;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
   }
 }
-.clouds-1 {
-  background-image: url("../images/cloud-3.png");
-  animation: clouds-loop-1 120s infinite linear;
-}
-
-@keyframes clouds-loop-2 {
-  to {
-    background-position: 2000px 0;
+.btn{
+  font-size: unset;
+  &.submit{
+    width: 100%;
+    font-size: 1em;
+  }
+  &.custom{
+    padding: 0.35em 0.75em 0.55em;
+    color: white;
+    background: rgb(242,137,255); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(242,137,255,1) 0%, rgba(200,82,255,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(242,137,255,1) 0%,rgba(200,82,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(242,137,255,1) 0%,rgba(200,82,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f289ff', endColorstr='#c852ff',GradientType=0 ); /* IE6-9 */
+    border: 1px solid #c75ff2;
+    border-radius: 14px;
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.75) inset;
+    &.submit{
+      letter-spacing: 10px;
+    }
   }
 }
-.clouds-2 {
-  background-image: url("../images/cloud-2.png");
-  animation: clouds-loop-2 50s infinite linear;
+.front,
+.back{
+  font-weight: 700;
+  font-size: 1.625em;
 }
-
-@keyframes clouds-loop-3 {
-  to {
-    background-position: 3158px 0;
-  }
-}
-.clouds-3 {
-  background-image: url("../images/cloud-3.png");
-  animation: clouds-loop-3 40s infinite linear;
-}
-
-
-.clouds {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
-  opacity: 1;
-  pointer-events: none;
+.close{
+  display: block;
   position: absolute;
-  overflow: hidden;
+  top: 10px;
+  right: 10px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-image: url(../images/close.png);
+  background-repeat: no-repeat;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+// popup
+
+.popup-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
   height: 100%;
-  // backdrop-filter: blur(0.085em);
-  // mix-blend-mode: hard-light;
-  transform: scale(1.5,1);
-  // filter: blur(0.1em);
+  visibility: hidden;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 0.3s;
 }
 
-.clouds-1,
-.clouds-2,
-.clouds-3 {
-  background-repeat: repeat-x;
+.popup-overlay.active {
+  visibility: visible;
+  opacity: 1;
+  text-align: center;
+}
+
+.popup-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 500px;
+  padding: 2em 1em;
+  // font-size: 26px;
+  color: #3f2e6e;
+  width: 100%;
+  max-width: 350px;
+  // min-height: 350px;
+  border-radius: 1em;
+  // backface-visibility: hidden;
+  background-color: #fcecdf;
+  box-shadow: 0 0 40px #e9c6a5 inset, -1px -1px 1px rgba(102, 60, 45, 0.65) inset;
+  transition: opacity 0.3s, top 0.3s;
+
+  .popup-close-style{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: block;
+    font-size: 1.625em;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-image: url(../images/close.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    // box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  .popup-close{
+    font-size: 1.625em;
+    font-weight: 800;
+  }
 }
 
-.facebook-rocker{
+.popup-content.active {
+  /*Shows pop-up content when "active" class is present */
+  visibility: visible;
+}
+
+// footer
+
+.footer,
+.footer *{
+  font-family: $document-font-family;
+  line-height: 1.25;
+}
+.footer{
+  display: grid;
+  // grid-template-columns: 1fr 1fr;
+  // gap: 3rem;
   margin: 0 auto;
   padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1em;
-  max-width: 700px;
+  // padding-top: 30em;
+  max-width: 1700px;
   width: 100%;
-  li{
-    transform: scale(1);
-    transition: transform 0.3s;
-    &:hover{
-      transform: scale(0.9);
+}
+.account-password{
+  color: #b1ff9f;
+  font-size: 1.25em;
+  list-style-type: cjk-ideographic;
+  .note{
+    padding: 1em 0;
+    color: black;
+    font-size: 0.8em;
+    // line-height: 1.5;
+    mark{
+      background-color: white;
+      &.white{
+        background-color: white;
+      }
+      &.green{
+        color: white;
+        background-color: #2a6a43;
+        em{
+          color: #affcff;
+        }
+      }
     }
+  }
+}
+
+// 遊戲分級標章
+
+.lgr-rkr{
+  padding: 2em 0;
+}
+.game-grading{
+  display: grid;
+  // grid-template-columns: 90px 1fr;
+  gap: 1em;
+  margin: 0;
+  padding: 0;
+  dd{
+    margin: 0;
+    img{
+      max-height: 90px;
+      height: 100%;
+    }
+    ul{
+      margin: 0;
+      padding-left: 2em;
+      li{
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+// 雷爵及搖滾火箭
+
+.lager-rocker{
+  display: grid;
+  // grid-template-columns: 1fr 2.5fr;
+  // gap: 1em;
+  margin: 0;
+  // padding: 1em;
+  color: #97d788;
+  background-color: #479564;
+  border-radius: 10px;
+  dd{
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.lager-rocker-logo{
+  display: flex;
+  // flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li{
+    max-height: 33px;
     a{
       display: block;
       text-decoration: none;
       img{
-        width: 100%;
-        filter:drop-shadow(0 2px 1px rgba(0, 0, 0, 0.85));
+        height: 100%;
       }
     }
   }
 }
 
-.footer{
+// LRG 客服中心、FB粉絲團、巴哈姆特
+
+.lrg-fb-gamer{
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 3em;
-  padding: 3em 1em;
-  color: #999;
-  font-size: 0.75em;
-  text-align: center;
-  .game-grading,
-  .lager-zone {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    gap: 1em;
-    text-align: initial;
-    .lager-logo{
-      a{
-        &:nth-child(1){
-          padding-right: 0.75em;
-        }
-      }
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li{
+    padding: 0 1em;
+    border-right: 1px solid #b1ff9f;
+    &:nth-child(1){
+      padding-left: unset;
     }
-  }
-  .game-grading{
-    .game-grading-list{
-      ul{
-        margin: 0;
-        padding-left: 1.25em;;
+    &:nth-last-child(1){
+      padding-right: unset;
+      border-right: unset;
+    }
+    a{
+      color: black;
+      text-decoration: none;
+      transition: color 0.3s, border-bottom 0.3s;
+      &:hover{
+        color: #b1ff9f;
+        border-bottom: 1px dotted #b1ff9f;
       }
     }
   }
@@ -399,184 +386,84 @@ audio{
 
 // RWD
 
-@media only screen and (min-width: 0px){
-  .game-logo{
-    position: static;
-    margin: 0 auto;
-    padding: 2em 3em;
+@media only screen and (min-width: 0){
+  .m-block{
+    display: block;
   }
-  .glass{
-    padding: 1em;
+  .account-password{
+    .note{
+      line-height: 1.5;
+    }
   }
-  // .glass-grid{
-  //   grid-template-columns: 1fr;
-  //   gap: 1em;
-  // }
-  .glass-grid{
+  .game-grading {
     grid-template-columns: 1fr;
-    gap: 1em;
-    // .right{
-    //   display: none;
-    // }
+    dd{
+      &:nth-child(1){
+        text-align: center;
+      }
+    }
   }
-  .grove{
-    transform: scale(1.05);
+  .lager-rocker{
+    grid-template-columns: 1fr;
+    gap: 0.5em;
+    padding: 2em 1em;
+    dd{
+      text-align: center;
+    }
   }
-  .mountains-castles,
-  .fore-ground{
-    background-position: bottom right;
-    filter: blur(20px);
-  }
-  .pig,
-  .rabbit{
-    display: none;
-  }
-  .rabbit{
-    // left: calc(50% + 150px);
-    left: calc(50% + 280px);
-    top: -12em;
-    z-index: 1;
+  .lrg-fb-gamer{
+    align-items: center;
+    justify-content: center;
+    li{
+      text-align: center;
+    }
   }
   .footer{
-    flex-wrap: wrap;
-    .game-grading{
-      flex-wrap: wrap;
-      width: 1000px;
-      .game-grading-mark{
-        width: 100%;
-        text-align: center;
-        img{
-          width: 80px;
-        }
-      }
-    }
-    .lager-zone{
-      flex-wrap: wrap;
-      width: 100%;
-      justify-content: center;
-      .lager-logo{
-        order: 0;
-      }
-      .footer-text{
-        text-align: center;
-        span{
-          &:nth-child(1){
-            display: block;
-          }
-        }
-      }
-    }
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    font-size: 0.85rem;
   }
 }
-@media only screen and (min-width: 500px){
-  .game-logo{
-    padding: 1em 2em;
+@media only screen and (min-width: 500px) {
+  .m-block{
+    display: inline;
   }
-  .glass{
-    padding: 2em;
+}
+@media only screen and (min-width: 700px) {
+  .account-password{
+    .note{
+      line-height: 1.5;
+    }
   }
-  .mountains-castles,
-  .fore-ground{
-    background-position: bottom center;
-  }
-  // .grove{
-  //   transform: scale(1);
-  // }
-  .snow-monster,
-  .human-girl{
-    display: none;
-  }
-  .footer{
-    .game-grading{
-      flex-wrap: nowrap;
-      .game-grading-mark{
-        width: unset;
+  .game-grading {
+    grid-template-columns: 90px 1fr;
+    dd{
+      &:nth-child(1){
         text-align: unset;
-        img{
-          width: 50px;
-        }
       }
     }
-    .lager-zone{
-      flex-wrap: wrap;
-      justify-content: center;
-      padding-top: 3em;
-      width: 100%;
-      border-top: 1px dotted #666;
-      .lager-logo{
-        order: 1;
-      }
-      .footer-text{
-        text-align: right;
-        span{
-          display: block;
-          &:nth-child(1){
-            display: unset;
-          }
-        }
-      }
+  }
+  .lager-rocker{
+    grid-template-columns: 1fr 2.5fr;
+    gap: 1em;
+    padding: 1em;
+    dd{
+      text-align: unset;
     }
   }
 }
 
-@media only screen and (min-width: 900px){
-  .fore-ground{
-    filter: unset;
-  }
-  .mountains-castles{
-    filter: unset;
-  }
-  .mountains-castles{
-    background-position: bottom left;
-  }
-  .snow-monster,
-  .human-girl{
-    display: unset;
-  }
-  .glass-grid{
-    grid-template-columns: 3fr 2.5fr;
-    .right{
-      display: block;
-    }
-  }
-  .pig,
-  .rabbit{
-    display: unset;
-  }
-}
-@media only screen and (min-width: 1500px){
-  // .game-logo{
-  //   position: absolute;
-  //   top: 70px;
-  //   left: 70px;
-  // }
-  // .download-zone{
-  //   padding-top: 9em;
-  // }
-  // .grove{
-  //   transform: scale(1.1);
-  // }
-  .pig{
-    z-index: unset;
-  }
+@media only screen and (min-width: 1000px){
   .footer{
-    flex-wrap: nowrap;
-    .game-grading{
-      padding-top: unset;
-      width: unset;
-      border-top: unset;
-    }
-    .lager-zone{
-      padding-top: unset;
-      border-top: unset;
-      width: unset;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  .lrg-fb-gamer{
+    align-items: unset;
+    justify-content: unset;
+    li{
+      text-align: unset;
     }
   }
 }
-
-// @media only screen and (min-width: 1700px){
-//   .pig{
-//     z-index: 1;
-//   }
-// }
-
+// @media only screen and (max-width: 600px){}

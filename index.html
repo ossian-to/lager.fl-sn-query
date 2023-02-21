@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>童話世界 - 獎勵查詢</title>
+  <!-- FB 社群分享 -->
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:title" content="童話世界 - 獎勵查詢">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="活動網站敘述">
+  <meta property="og:url" content="活動網址">
+  <meta property="og:image" content="assets/images/fb-1200x630.png"><!--圖檔路徑需改成絕對路徑-->
+  <meta property="og:site_name" content="童話世界 - 獎勵查詢">
+  <link rel="stylesheet" href="assets/css/all.css">
+  <script src="assets/js/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+  <div class="ossian">
+
+
+    <!-- 童話世界 LOGO -->
+    <figure class="game-logo">
+      <img src="assets/images/game-logo.png" alt="童話世界 LOGO">
+    </figure>
+
+
+    <!-- 內容區塊 -->
+    <!-- 
+      新增一筆活動需要注意下面三點
+      1. 一組活動的範圍 <li class="poker">...</li>
+      2. <input type="checkbox" name="option-1" id="poker-1"> id 需要對應 <label for="poker-1">
+      3. <form id="form-zone-1"> 遞增
+     -->
+    <div class="game-content">
+      <ul class="pokers">
+        <li class="poker">
+          <div class="label">
+            <input type="checkbox" name="option-1" id="poker-1">
+            <div class="flip">
+              <div class="front">
+                <div class="game-description">
+                  <div class="game-title-row">
+                    <div class="game-item">限量<em>菁英封測</em>獎勵</div>
+                  </div>
+                  <div class="game-end-date-row">2023<small>/</small>12<small>/</small>31 截止</div>
+                  <div class="game-btn-row">
+                    <label for="poker-1" class="btn custom">虛寶序號領取</label>
+                  </div>
+                </div>
+              </div>
+              <div class="back">
+                <div class="form-position">
+                <label for="poker-1" class="close"></label>
+                <form action="" class="form-zone" id="form-zone-1">
+                  <div class="input-text">你的帳號</div>
+                  <input type="text" />
+                  <div class="input-text">你的密碼</div>
+                  <input type="password">
+                  <div class="btn-roow">
+                    <!-- 
+                      可以將按鈕改成下面的標籤
+                      div, span, a, button, input[type="submit"]
+                    -->
+                    <label for="poker-1" class="btn custom submit popup-open">送出</label>
+                  </div>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="poker">
+          <div class="label">
+            <input type="checkbox" name="option-1" id="poker-2">
+            <div class="flip">
+        
+              <div class="front">
+                <div class="game-description">
+                  <div class="game-title-row">
+                    <div class="game-item"><em>CB封測</em>獎勵</div>
+                  </div>
+                  <div class="game-end-date-row">2023<small>/</small>12<small>/</small>31 截止</div>
+                  <div class="game-btn-row">
+                    <label for="poker-2" class="btn custom">虛寶序號查詢</label>
+                  </div>
+                </div>
+              </div>
+              <div class="back">
+                <div class="form-position">
+                  <label for="poker-2" class="close"></label>
+                  <form action="" class="form-zone" id="form-zone-2">
+                    <div class="input-text">你的帳號</div>
+                    <input type="text">
+                    <div class="input-text">你的密碼</div>
+                    <input type="password">
+                    <div class="btn-roow">
+                      <!-- 
+                        可以將按鈕改成下面的標籤
+                        div, span, a, button, input[type="submit"]
+                       -->
+                      <label for="poker-2" class="btn custom submit popup-open">送出</ㄇㄠ>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="left">
+        <!-- 虛寶兌換說明 -->
+        <ul class="account-password">
+          <li>
+            僅限同時符合以下兩條件的限量菁英封測玩家可領取虛寶序號獎勵
+            <div class="note">
+              A. 參與過任一階段的限量菁英封測。<br>
+              B. 有填寫填寫「世界創封紀錄書」(問卷調查)
+            </div>
+          </li>
+          <li>
+            以下為帳號、密碼輸入注意事項
+            <div class="note">
+              封測帳號 = 報名時填寫的 email<br>
+              封測密碼 = 報名時填寫的手機號碼 (前頭需要加國碼)<br>
+              <mark>範例：</mark>報名時選擇的國碼是+<mark class="green">886</mark>，填寫的手機號碼是 <mark class="green">0<em>912345678</em></mark>，那麼密碼就是 <mark class="green">886<em>912345678</em></mark>
+            </div>
+          </li>
+          <li>
+            請注意，虛寶獎勵序號僅限使用 1 次。使用後無法再次使用。
+          </li>
+        </ul>
+      </div>
+      <div class="right">
+        <!-- 遊戲分級標章 -->
+        <dl class="game-grading">
+          <dd><img src="assets/images/game-12.png" alt="輔 12 級"></dd>
+          <dd>
+            <ul class="game-grading-list">
+              <li>本遊戲內容涉及性、暴力、遊戲角色穿著凸顯性特徵之服飾但不涉及性暗示，依遊戲軟體分級管理辦法分類為輔 12 級，12 歲以上之人使得使用。</li>
+              <li>本遊戲為免費使用，遊戲內另提供購買虛擬遊戲幣、物品等付費服務。</li>
+              <li>長時間進行遊戲，請注意使用時間，避免沉迷於遊戲。</li>
+            </ul>
+          </dd>
+        </dl>
+        <!-- 雷爵及搖滾火箭 -->
+        <div class="lgr-rkr">
+          <dl class="lager-rocker">
+            <dd>
+              <ul class="lager-rocker-logo">
+                <li>
+                  <a href="http://www.lager.com.tw/" target="_blank">
+                    <img src="assets/images/lager_logo_white.svg" alt="雷爵的 LOGO">
+                  </a>
+                </li>
+                <li>
+                  <a href="https://lrg.rocketgames.com.tw/index/index" target="_blank">
+                    <img src="assets/images/rocker-logo.png" alt="搖滾火箭的 LOGO">
+                  </a>
+                </li>
+              </ul>
+            </dd>
+            <dd>
+              <div>雷爵網路科技股份有限公司</div>
+              <div>&copy; Lager Network Technologies. <span class="m-block">All right reserved.</span></div>
+            </dd>
+          </dl>
+        </div>
+        <!-- LRG 客服中心、FB粉絲團、巴哈姆特 -->
+        <ul class="lrg-fb-gamer">
+          <li><a href="https://lrg.rocketgames.com.tw/service/service_index" target="_blank">LRG <span class="m-block">客服中心</span></a></li>
+          <li><a href="https://www.facebook.com/FairylandWorldfun" target="_blank">童話世界 <span class="m-block">FB 紛絲團</span></a></li>
+          <li><a href="https://forum.gamer.com.tw/A.php?bsn=75395" target="_blank">童話世界<span class="m-block">巴哈姆特討論區</span></a></li>
+        </ul>
+      </div>
+    </footer>
+
+
+    <!-- popup -->
+
+    <div class="popup-overlay">
+      <div class="popup-content">
+        <div class="content-row">
+          <h2>Pop-Up</h2>
+          <p> This is an example pop-up that you can make using jQuery.</p>
+          <button class="btn popup-close-style popup-close"><!--關閉 popup--></button>
+        </div>
+        <div class="btn-row">
+          <button class="btn custom popup-close">返回上一頁</button>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <script>
+
+    $(".popup-open").on("click", function () {
+      $(".popup-overlay").addClass("active");
+    });
+    $(".popup-close").on("click", function () {
+      $(".popup-overlay").removeClass("active");
+    });
+
+  </script>
+</body>
+</html>
