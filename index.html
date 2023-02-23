@@ -4,111 +4,123 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>童話世界 - 獎勵查詢</title>
+  <meta name="description" content="您可以在這裡查詢及領取到與童話世界有關的活動虛寶序號">
+  <title>童話世界 - 序號查詢</title>
   <!-- FB 社群分享 -->
   <meta property="og:locale" content="zh_TW">
-  <meta property="og:title" content="童話世界 - 獎勵查詢">
+  <meta property="og:title" content="童話世界 - 序號查詢">
   <meta property="og:type" content="website">
-  <meta property="og:description" content="活動網站敘述">
+  <meta property="og:description" content="您可以在這裡查詢及領取到與童話世界有關的活動虛寶序號">
   <meta property="og:url" content="活動網址">
   <meta property="og:image" content="assets/images/fb-1200x630.png"><!--圖檔路徑需改成絕對路徑-->
-  <meta property="og:site_name" content="童話世界 - 獎勵查詢">
+  <meta property="og:site_name" content="童話世界 - 序號查詢">
   <link rel="stylesheet" href="assets/css/all.css">
   <script src="assets/js/jquery-3.6.3.min.js"></script>
+  <script src="assets/js/clipboard.js"></script>
+  <script src="assets/js/sakura.js"></script>
 </head>
 <body>
+  <div class="sakura">
+    <img id="sakura" src="assets/images/sakura.png" alt="櫻花飄落">
+  </div>
   <div class="ossian">
 
-
-    <!-- 童話世界 LOGO -->
-    <figure class="game-logo">
-      <img src="assets/images/game-logo.png" alt="童話世界 LOGO">
-    </figure>
+    <div class="kv">
 
 
-    <!-- 內容區塊 -->
-    <!-- 
-      新增一筆活動需要注意下面三點
-      1. 一組活動的範圍 <li class="poker">...</li>
-      2. <input type="checkbox" name="option-1" id="poker-1"> id 需要對應 <label for="poker-1">
-      3. <form id="form-zone-1"> 遞增
-     -->
-    <div class="game-content">
-      <ul class="pokers">
-        <li class="poker">
-          <div class="label">
-            <input type="checkbox" name="option-1" id="poker-1">
-            <div class="flip">
-              <div class="front">
-                <div class="game-description">
-                  <div class="game-title-row">
-                    <div class="game-item">限量<em>菁英封測</em>獎勵</div>
-                  </div>
-                  <div class="game-end-date-row">2023<small>/</small>12<small>/</small>31 截止</div>
-                  <div class="game-btn-row">
-                    <label for="poker-1" class="btn custom">虛寶序號領取</label>
-                  </div>
-                </div>
-              </div>
-              <div class="back">
-                <div class="form-position">
-                <label for="poker-1" class="close"></label>
-                <form action="" class="form-zone" id="form-zone-1">
-                  <div class="input-text">你的帳號</div>
-                  <input type="text" />
-                  <div class="input-text">你的密碼</div>
-                  <input type="password">
-                  <div class="btn-roow">
-                    <!-- 
-                      可以將按鈕改成下面的標籤
-                      div, span, a, button, input[type="submit"]
-                    -->
-                    <label for="poker-1" class="btn custom submit popup-open">送出</label>
-                  </div>
-                </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="poker">
-          <div class="label">
-            <input type="checkbox" name="option-1" id="poker-2">
-            <div class="flip">
-        
-              <div class="front">
-                <div class="game-description">
-                  <div class="game-title-row">
-                    <div class="game-item"><em>CB封測</em>獎勵</div>
-                  </div>
-                  <div class="game-end-date-row">2023<small>/</small>12<small>/</small>31 截止</div>
-                  <div class="game-btn-row">
-                    <label for="poker-2" class="btn custom">虛寶序號查詢</label>
+      <!-- 童話世界 LOGO -->
+      <figure class="game-logo">
+        <img src="assets/images/game-logo.png" alt="童話世界 LOGO">
+      </figure>
+
+
+      <!-- 角色圖 -->
+      <ul class="roles">
+        <li class="role-1"><img src="assets/images/pig.png" alt="豬"></li>
+        <li class="role-2"><img src="assets/images/human-girl.png" alt="人類-女"></li>
+        <li class="role-3"><img src="assets/images/rabbit.png" alt="兔子"></li>
+        <li class="role-4"><img src="assets/images/ananas.png" alt="鳳梨"></li>
+      </ul>
+
+
+      <!-- 內容區塊 -->
+      <!-- 
+        新增一筆活動需要注意下面三點
+        1. 一組活動的範圍 <li class="poker">...</li>
+        2. <input type="checkbox" name="option-1" id="poker-1"> id 需要對應 <label for="poker-1">
+        3. <form id="form-zone-1"> 遞增
+      -->
+      <div class="game-content">
+        <ul class="pokers">
+          <li class="poker">
+            <div class="label">
+              <input type="checkbox" name="option-1" id="poker-1">
+              <div class="flip">
+                <div class="front">
+                  <div class="game-description">
+                    <div class="game-title-row">
+                      <div class="game-item">限量<em>菁英封測</em>獎勵</div>
+                    </div>
+                    <div class="game-end-date-row">2023<small>/</small>12<small>/</small>31 截止</div>
+                    <div class="game-btn-row">
+                      <label for="poker-1" class="btn custom">虛寶序號領取</label>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="back">
-                <div class="form-position">
-                  <label for="poker-2" class="close"></label>
-                  <form action="" class="form-zone" id="form-zone-2">
+                <div class="back">
+                  <div class="form-position">
+                  <label for="poker-1" class="close"></label>
+                  <form action="" class="form-zone" id="form-zone-1">
                     <div class="input-text">你的帳號</div>
-                    <input type="text">
+                    <input type="text" />
                     <div class="input-text">你的密碼</div>
                     <input type="password">
                     <div class="btn-roow">
-                      <!-- 
-                        可以將按鈕改成下面的標籤
-                        div, span, a, button, input[type="submit"]
-                       -->
-                      <label for="poker-2" class="btn custom submit popup-open">送出</ㄇㄠ>
+                      <a href="#popup-submit" class="btn custom submit popup-open">送出</a>
                     </div>
                   </form>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </li>
-      </ul>
+          </li>
+          <li class="poker">
+            <div class="label">
+              <input type="checkbox" name="option-1" id="poker-2">
+              <div class="flip">
+          
+                <div class="front">
+                  <div class="game-description">
+                    <div class="game-title-row">
+                      <div class="game-item"><em>CB封測</em>獎勵</div>
+                    </div>
+                    <div class="game-end-date-row">2023<small>/</small>12<small>/</small>31 截止</div>
+                    <div class="game-btn-row">
+                      <label for="poker-2" class="btn custom">虛寶序號查詢</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="back">
+                  <div class="form-position">
+                    <label for="poker-2" class="close"></label>
+                    <form action="" class="form-zone" id="form-zone-2">
+                      <div class="input-text">你的帳號</div>
+                      <input type="text">
+                      <div class="input-text">你的密碼</div>
+                      <input type="password">
+                      <div class="btn-roow">
+                        <a href="#popup-error" class="btn custom submit popup-open">送出</a>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+
     </div>
 
 
@@ -185,14 +197,36 @@
     <!-- popup -->
 
     <div class="popup-overlay">
-      <div class="popup-content">
+      <div class="popup-content" id="popup-submit">
         <div class="content-row">
-          <h2>Pop-Up</h2>
-          <p> This is an example pop-up that you can make using jQuery.</p>
+          <div>恭喜您符合序號資格，<br>以下為您的獎勵序號，請查收。</div>
+          <div class="copy-number-position">
+            <label for="number-1" class="copy-number">
+              <input type="text" id="number-1" value="QASHDGJHGCZGFH">
+              <button class="copy" data-clipboard-action="copy" data-clipboard-target="#number-1">Copy</button>
+            </label>
+          </div>
+          <h3><span>使用方式</span></h3>
+          <div class="copy-number-position">
+            至遊戲內畫面下方，點選「<em>選單</em>」→「<em>設定</em>」→「<em>服務</em>」→「<em>序號兌換</em>」
+          </div>
           <button class="btn popup-close-style popup-close"><!--關閉 popup--></button>
         </div>
         <div class="btn-row">
-          <button class="btn custom popup-close">返回上一頁</button>
+          <span class="btn custom popup-close">返回上一頁</span>
+        </div>
+      </div>
+
+      <div class="popup-content" id="popup-error">
+        <div class="content-row">
+          <div>
+            <p style="font-size: 1.25em;">很抱歉<br>您不符合序號資格。</p>
+            <p>如有問題，可至 <a href="https://lrg.rocketgames.com.tw/service/service_index" target="_blank">LRG 客服中心</a>進行反應詢問。</p>
+          </div>
+          <button class="btn popup-close-style popup-close"><!--關閉 popup--></button>
+        </div>
+        <div class="btn-row">
+          <span class="btn custom popup-close">返回上一頁</span>
         </div>
       </div>
     </div>
@@ -208,6 +242,14 @@
     $(".popup-close").on("click", function () {
       $(".popup-overlay").removeClass("active");
     });
+
+    $(function () {
+      $('.sakura').Cherry_Blossoms();
+    });
+
+    var clipboard = new ClipboardJS('.copy');
+
+
 
   </script>
 </body>

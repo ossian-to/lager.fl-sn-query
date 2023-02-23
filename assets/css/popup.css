@@ -1,0 +1,117 @@
+.popup-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s 0s, visibility 0s 0.3s;
+}
+.popup-overlay.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s 0s, visibility 0s 0s;
+}
+.popup-content {
+  overflow: hidden;
+  position: relative;
+  margin: 1em;
+  padding: 0;
+  max-width: 350px;
+  width: 100%;
+  font-size: 16px;
+  background: #FFF;
+  border-radius: 1em;
+  transform: translateY(-20%);
+  transition: transform 0.3s;
+}
+.popup-overlay.is-visible .popup-content{
+  transform: translateY(0);
+}
+.popup-close{
+  cursor: pointer;
+}
+.popup-close-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  font-size: 1.75em;
+  line-height: 1;
+  border-radius: 50%;
+  text-decoration: none;
+  background-color: transparent;
+  background-image: url(../images/close.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px;
+  transform: rotate(0);
+  transition: transform 0.3s, background-color 0.3s;
+}
+.popup-close-style:hover{
+  background-color: rgba(0,0,0,0.05);
+  transform: rotate(360deg);
+}
+
+.popup-content > header, 
+.popup-content > main, 
+.popup-content > footer{
+  margin: 0;
+  padding: 0;
+}
+.popup-content > header h1,
+.popup-content > header h2,
+.popup-content > header h3,
+.popup-content > header h4,
+.popup-content > header h5,
+.popup-content > header h6{
+  margin: 0;
+  padding: 0;
+  line-height: 1.15;
+}
+.popup-content main{
+  padding: 1em;
+}
+.popup-content main p:nth-child(1){
+  margin-top: 0;
+}
+.popup-content main .left{
+  text-align: left;
+}
+.popup-content main .center{
+  text-align: center;
+}
+.popup-content main .right{
+  text-align: right;
+}
+.popup-content footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-content .btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35em 0.5em;
+  line-height: 1.15;
+  font-size: 1em;
+  text-align: center;
+  text-decoration: none;
+  appearance: none;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -32,6 +32,11 @@
   }
 }
 
+.kv{
+  position: relative;
+  // padding-bottom: 5em;
+}
+
 // 童話世界的 LOGO
 
 .game-logo{
@@ -47,11 +52,44 @@
   }
 }
 
+// 角色圖
+
+.roles{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+  li{
+    position: absolute;
+    // 豬
+    // &:nth-child(1){
+    //   top: 70px;
+    //   left: calc(50% - 750px);
+    // }
+    // 人類-女
+    // &:nth-child(2){
+    //   top: -190px;
+    //   left: calc(50% - 720px);
+    // }
+    // 兔子
+    // &:nth-child(3){
+    //   top: 240px;
+    //   left: calc(50% + 420px);
+    // }
+    // 鳳梨
+    // &:nth-child(4){
+    //   top: 140px;
+    //   left: calc(50% + 550px);
+    // }
+  }
+}
+
 // 遊戲內容
 
-.game-content{
-  padding-bottom: 5em;
-}
+// .game-content{
+//   padding-bottom: 5em;
+// }
 .game-description{
   position: relative;
   display: flex;
@@ -188,38 +226,62 @@
   position: fixed;
   top: 0;
   left: 0;
+  text-align: center;
   width: 100%;
   height: 100%;
   visibility: hidden;
   opacity: 0;
   background: rgba(0, 0, 0, 0.7);
-  transition: opacity 0.3s;
+  transition: opacity 0.3s 0s, visibility 0s 0.3s;
 }
 
 .popup-overlay.active {
   visibility: visible;
   opacity: 1;
-  text-align: center;
+  transition: opacity 0.3s 0s, visibility 0s 0s;
 }
 
 .popup-content {
   position: relative;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: absolute;
   padding: 2em 1em;
-  // font-size: 26px;
-  color: #3f2e6e;
+  color: #8e523c;
   width: 100%;
   max-width: 350px;
-  // min-height: 350px;
+  font-weight: 800;
+  line-height: 1.5;
   border-radius: 1em;
-  // backface-visibility: hidden;
   background-color: #fcecdf;
   box-shadow: 0 0 40px #e9c6a5 inset, -1px -1px 1px rgba(102, 60, 45, 0.65) inset;
-  transition: opacity 0.3s, top 0.3s;
+  transition: opacity 0.3s 0, top 0.3s;
+
+  &:target{
+    display: flex;
+  }
+
+  h3{
+    margin: 0;
+    font-size: 1.25em;
+    text-align: center;
+    background-image: url(../images/dot.png);
+    background-repeat: repeat-x;
+    background-position: center;
+    span{
+      display: inline-block;
+      padding: 0 0.75em;
+      background-color: #fcecdf;
+    }
+  }
+
+  p{
+    &:nth-child(1){
+      margin-top: 0;
+    }
+  }
 
   .popup-close-style{
     position: absolute;
@@ -238,13 +300,7 @@
   }
   .popup-close{
     font-size: 1.625em;
-    font-weight: 800;
   }
-}
-
-.popup-content.active {
-  /*Shows pop-up content when "active" class is present */
-  visibility: visible;
 }
 
 // footer
@@ -255,7 +311,7 @@
   line-height: 1.25;
 }
 .footer{
-  display: grid;
+  display: flex;
   // grid-template-columns: 1fr 1fr;
   // gap: 3rem;
   margin: 0 auto;
@@ -384,11 +440,118 @@
   }
 }
 
+// 櫻花
+.sakura img{
+    width:50px;
+    height:50px;
+    margin-top:-5%;
+    /* opacity: 0.75; */
+    filter: blur(1px);
+    position: fixed;
+    z-index: 1;
+    transform:rotate3d(.6,1,.6,45deg);
+}
+
+// 複製序號
+
+.copy-number-position{
+  padding: 1em 0;
+  em{
+    color: #9b38c9;
+  }
+}
+.copy-number{
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 60px;
+  width: 100%;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  input[type="text"]{
+    padding: 0.25em 0.35em;
+    color:#e97fff;
+    font-size: 1.15em;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+  button{
+    width: 100%;
+    height: 100%;
+    color:#701e96;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+  }
+}
+
+@keyframes jump {
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(30px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+@keyframes rabbit-jump{
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-2em);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+@keyframes rabbit-shadow-jump{
+  0%{
+    background-color: rgba(0, 0, 0, 0.35);
+    transform: scale(1);
+  }
+  50%{
+    background-color: rgba(0, 0, 0, 0.25);
+    transform: scale(0.75);
+  }
+  100%{
+    background-color: rgba(0, 0, 0, 0.35);
+    transform: scale(1);
+  }
+}
+
+@keyframes ananas {
+  0%{
+    transform: rotate(-16deg);
+  }
+  50%{
+    transform: rotate(16deg);
+  }
+  100%{
+    transform: rotate(-16deg);
+  }
+}
+
 // RWD
 
 @media only screen and (min-width: 0){
   .m-block{
     display: block;
+  }
+  .kv{
+    padding-bottom: 1em;
+  }
+  .roles{
+    display: none;
   }
   .account-password{
     .note{
@@ -419,7 +582,8 @@
     }
   }
   .footer{
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    // grid-template-columns: 1fr;
     gap: 1rem;
     font-size: 0.85rem;
   }
@@ -428,8 +592,67 @@
   .m-block{
     display: inline;
   }
+  .roles{
+    display: block;
+    li{
+      // 豬
+      &:nth-child(1){
+        display: none;
+        // top: 70px;
+        // left: calc(50% - 750px);
+      }
+      // 人類-女
+      &:nth-child(2){
+        top: -210px;
+        left: calc(50% - 520px);
+      }
+      // 兔子
+      &:nth-child(3){
+        top: 460px;
+        left: calc(50% + 180px);
+        img{
+          animation: rabbit-jump 0.3s ease-in-out infinite;
+        }
+        &::before{
+          content: '';
+          position: absolute;
+          left: 12px;
+          bottom: -3px;
+          width: 48%;
+          height: 15px;
+          border-radius: 50%;
+          background-color: rgba(0, 0, 0, 0.35);
+          filter: blur(2px);
+          animation: rabbit-shadow-jump 0.3s ease-in-out infinite;
+        }
+      }
+      // 鳳梨
+      &:nth-child(4){
+        top: 366px;
+        left: calc(50% + 250px);
+        img{
+          transform-origin: bottom center;
+          animation: ananas 1.5s infinite;
+        }
+        &::before{
+          content: '';
+          position: absolute;
+          left: 16px;
+          bottom: -3px;
+          width: 82%;
+          height: 10px;
+          border-radius: 50%;
+          background-color: rgba(0, 0, 0, 0.35);
+          filter: blur(2px);
+        }
+      }
+    }
+  }
 }
 @media only screen and (min-width: 700px) {
+  .kv{
+    padding-bottom: 5em;
+  }
   .account-password{
     .note{
       line-height: 1.5;
@@ -454,8 +677,36 @@
 }
 
 @media only screen and (min-width: 1000px){
+  .roles{
+    li{
+      // 豬
+      &:nth-child(1){
+        display: block;
+        top: 70px;
+        left: calc(50% - 750px);
+        animation: jump 1s infinite;
+      }
+      // 人類-女
+      &:nth-child(2){
+        top: -190px;
+        left: calc(50% - 720px);
+      }
+      // 兔子
+      &:nth-child(3){
+        top: 240px;
+        left: calc(50% + 420px);
+      }
+      // 鳳梨
+      &:nth-child(4){
+        top: 140px;
+        left: calc(50% + 550px);
+      }
+    }
+  }
   .footer{
-    grid-template-columns: 1fr 1fr;
+    // flex-wrap: nowrap;
+    flex-direction: row;
+    // grid-template-columns: 1fr 1fr;
     gap: 3rem;
   }
   .lrg-fb-gamer{

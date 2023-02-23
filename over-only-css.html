@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="assets/css/all.css"> -->
+  <script src="assets/js/jquery-3.6.3.min.js"></script>
+
+  <style>
+    html,body{
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .popup-overlay {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      transition: opacity 0.3s;
+      visibility: hidden;
+      opacity: 0;
+      z-index: 99;
+    }
+    .popup-overlay .popup-overlay-close {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      cursor: default;
+    }
+    .popup-overlay:target {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup-content {
+      position: relative;
+      margin: 1em;
+      padding: 1em;
+      background: #fff;
+      max-width: 350px;
+      width: 100%;
+    }
+    .popup-content .popup-close {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 20px;
+      right: 20px;
+      transition: all 0.3s;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #666;
+    }
+    .popup-content .popup-close:hover {
+      opacity: 1;
+    }
+    .pop{
+      visibility: hidden;
+    }
+    .pop:target{
+      visibility: visible;
+    }
+  </style>
+
+</head>
+<body>
+
+
+
+<a class="button" href="#popup1">Click Me Too</a></p>
+
+
+<div class="popup-overlay" id="popup1">
+  <a class="popup-overlay-close" href="#"></a>
+  <div class="popup-content">
+    <h2>What the what?</h2>
+    <a class="popup-close" href="#">&times;</a>
+    <p>Click outside the popup to close.</p>
+  </div>
+</div>
+
+<a href="#b">bbb</a> | <a href="#c">ccc</a> | <a href="#d">ddd</a>
+<div class="pop" id="b" style="border:1px solid red;">bbb</div>
+<div class="pop" id="c" style="border:1px solid red;">ccc</div>
+<div class="pop" id="d" style="border:1px solid red;">ddd</div>
+
+
+
+  <script>
+    $(".popup-open, .popup-content").on("click", function () {
+      $(".popup-popup-overlay").addClass("active");
+    });
+    $(".popup-close, .popup-popup-overlay").on("click", function () {
+      $(".popup-popup-overlay").removeClass("active");
+    });
+  </script>
+</body>
+</html>
